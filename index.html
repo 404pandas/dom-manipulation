@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Import Normalize stylesheet -->
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <!--Import Materialize stylesheets-->
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Minimized Materialize for production -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./assets/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <!-- Full Materialize for development -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./assets/css/materialize.css"
+      media="screen,projection"
+    />
+    <!-- Import Animista stylesheet -->
+    <link rel="stylesheet" href="./assets/css/animista.css" />
+    <!-- Import personal stylesheets -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Import color stylesheet -->
+    <link rel="stylesheet" href="./assets/css/colors.css" />
+    <title>Dom Manipulation Tree</title>
+  </head>
+  <!-- Start of Body -->
+  <body>
+    <!-- Start of Main -->
+    <main>
+      <!-- Start of Header/Nav -->
+      <div class="navbar-fixed">
+        <!-- Navbar Color -->
+        <nav id="nav" class="light-green-bg">
+          <!-- Navbar Spacing -->
+          <div class="nav-wrapper flexbox flexSpaceAround">
+            <!-- Logo -->
+            <img
+              id="codedLogo margin1"
+              href="https://github.com/404pandas"
+              class="marginAuto codedLogo margin1"
+              src="./assets/images/coded logo copy.png"
+            />
+            <!-- Navbar title -->
+            <span class="card-title left">DOM Study</span>
+          </div>
+        </nav>
+      </div>
+      <!-- End of Header/Nav -->
+      <!-- Start of Tree -->
+      <div class="cards flexbox">
+        <div class="tree treeContainer width90">
+          <ul>
+            <li>
+              <!-- Start of Parent Card -->
+              <a href="#" class="flexbox flexColumn card-content parentNode">
+                Parent
+                <p>I am a Parent node!</p></a
+              >
+              <!-- End of Parent Card -->
+              <div >
+              <ul class="childrenRow">
+                <li>
+                  <!-- Start of Child card -->
+                  <a href="#" class="flexbox flexColumn card-content"
+                    >Child
+                    <p>I am a Child node!</p>
+                  </a>
+                  <!-- End of Child card -->
+                    <li>
+                      <a href="#" class="flexbox flexColumn card-content">
+                        Child
+                        <p>I'm a child node!</p>
+                        <p>
+                          appendChild() nodes get added to the end of the list!
+                        </p></a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="flexbox flexColumn card-content"
+                        >
+                        <p>I'm a child node!</p>
+                        <p>My sibling node shares the same
+                        parent node as me!</p></a
+                      >
+                    </li>
+                </li>
+              </ul>
+            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- beginning of footer -->
+      <footer class="page-footer light-green-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">2U Teacher's Assistant</h5>
+              <p class="grey-text text-lighten-4">
+                Info about my position at 2U/Central of Florida and history of
+                taking bootcamp will go here
+              </p>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text">FAQ</h5>
+              <ul>
+                <li><p class="white-text">Placeholders?</p></li>
+                <li><p class="white-text">Yeah, yeah, I know</p></li>
+                <li><p class="white-text">Ugly?</p></li>
+                <li><p class="white-text">This I also know</p></li>
+              </ul>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text">Connect</h5>
+              <ul>
+                <li>
+                  <a
+                    class="white-text"
+                    href="https://www.linkedin.com/in/404pandas/"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li>
+                  <a class="white-text" href="https://github.com/404pandas"
+                    >Github</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="white-text"
+                    href="https://www.twitch.tv/marriage_consoleing"
+                    >Twitch</a
+                  >
+                </li>
+                <li>
+                  <a class="white-text" href="https://twitter.com/404Pandas"
+                    >Twitter</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright dark-green-bg">
+          <div class="container">
+            Made by
+            <a
+              class="dark-green-fg text-lighten-3 light-green-bg"
+              href="https://www.linkedin.com/in/404pandas/"
+              >Mary Elenius</a
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- end of footer -->
+      <!-- javascript files go here -->
+      <script src="./assets/js/script.js"></script>
+      <!-- materialize js for optimized loading-->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="./assets/js/init.js"></script>
+      <script src="./assets/js/materialize.js"></script>
+      <script src="./assets/js/materialize.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <!-- End of Main -->
+    </main>
+    <!-- End of Body -->
+  </body>
+</html>

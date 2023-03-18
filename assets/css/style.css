@@ -389,15 +389,16 @@ input[type="submit"] {
 }
 
 .card-content {
-  width: 175px;
-  height: 100px;
+  max-width: 100px;
+  height: auto;
 }
 
 .parentNode {
   margin: auto;
 }
 
-.treeContainer {
+.treeContainer1,
+.treeContainer2 {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -469,7 +470,11 @@ i.no-margin {
 }
 
 .width90 {
-  width: 90%;
+  width: 90vw !important;
+}
+
+.width100 {
+  width: 100vw !important;
 }
 /* ============================================================ *\
 *                        Example Heading                         *

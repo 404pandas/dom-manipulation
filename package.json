@@ -1,5 +1,32 @@
 {
   "dependencies": {
+    "jquery": "^3.6.4",
+    "jsdom": "^21.1.1",
     "materialize-css": "^1.0.0-rc.2"
-  }
+  },
+  "name": "dom-manipulation-site",
+  "version": "1.0.0",
+  "description": "A site that covers DOM Manipulation and CSS Frameworks",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/404pandas/dom-manipulation.git"
+  },
+  "keywords": [
+    "document-object-model",
+    "dom-manipulation",
+    "dom",
+    "materialize",
+    "css",
+    "javascript"
+  ],
+  "author": "Mary Elenius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/404pandas/dom-manipulation/issues"
+  },
+  "homepage": "https://github.com/404pandas/dom-manipulation#readme"
 }

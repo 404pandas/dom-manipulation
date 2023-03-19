@@ -1,17 +1,5 @@
 // DOM Manipulation \\
 
-// This activity will utilize jQuery.
-// If you remember, that requires the following
-// to use jQuery with Node.js
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { doc } = new JSDOM("");
-const $ = require("jquery")(doc);
-
-// Now, elements can easily be targeted using $
-// For example, $("treeContainer1") will target
-// the div with a class of "treeContainer1"
-
 // If you haven't already, please copy down
 // both branches from the DOM Study Site's repo.
 // Here is a link: https://github.com/404pandas/dom-manipulation
@@ -37,8 +25,13 @@ const $ = require("jquery")(doc);
 // For the query selectors, we'll create one
 // for the div that holds the first tree and
 // one for the button to run this script
-const firstTree = $(".treeContainer1");
-const startButton = $("#startButton");
+const firstTree = document.getElementById("treeContainer1");
+const startButton = document.getElementById("startButton");
+let container = document.createElement("div");
+let p = document.createElement("p");
+let a = document.createElement("a");
+let li = document.createElement("li");
+let ul = document.createElement("ul");
 // Now, we can use any javascript method
 // on these elements by using their variable
 
@@ -57,39 +50,41 @@ const startButton = $("#startButton");
 // second tree we will create.
 
 // First, target where you would like to create the div
-// using the querySelector() we already created.
+// using the getElementById() variables we already created.
 
 function createTree() {
-  // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
-  //   Step 1- use the insertAdjacentElement() method to create
+  // MDN LINK
+  //   Step 1- use the after() method to create
   // the div that will hold our tree. Set it to a variable.
-  treeContainer2 = firstTree.insertAdjacentElement("div");
+  var treeContainer2 = firstTree.after(container);
   // By assigning this div to a variable, we can target
   // it later anywhere in our function.
 
   // Step 2- give this new div classes for styling
-  // use one of the following two Javascript methods:
+  // using one of the following two Javascript methods:
   // The classname() Javascript Method
   // https://developer.mozilla.org/en-US/docs/Web/API/Element/className
-  treeContainer2.classname = "tree treeContainer2";
+  treeContainer2.className = "tree treeContainer2";
   // The setAttribute() Javascript Method
   // https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute
   // Remember- You need to getAttribute() before you can setAttribute()
-  treeContainer2
+  treeContainer2.setClass
     .getAttribute("class")
     .setAttribute("class", "cards flexbox width90");
-  // I have already created  classes in style.css for this activity
-  //   Apply these classes: tree treeContainer2 cards flexbox width90
-
-  // Now, if you inspect the html in the browser
-  // you will see the div created when you click on
-  // the Start Javascript button! See the eventListener
-  //   for this click event at the bottom for functionality!
 }
+// I have already created  classes in style.css for this activity
+//   Apply these classes: tree treeContainer2 cards flexbox width90
+
+// Now, if you inspect the html in the browser
+// you will see the div created when you click on
+// the Start Javascript button! See the eventListener
+//   for this click event at the bottom for functionality!
 
 function createParent() {
-  container2 = treeContainer2;
-  let parentNode = container2.createElement("ul");
+  var treeContainer2 = getElementsByClassName(
+    "tree treeContainer2 cards flexbox width90"
+  );
+  let parentNode = treeContainer2.createElement("ul");
   parentNode.className = "parentRow width90";
   console.log(`The current node looks like this:` + parentNode);
 }
@@ -138,18 +133,18 @@ function eraseTree() {
 // Next, add any event listeners needed for your script
 // This is an event listener that will start the functions
 // on button click. We'll add any functions we build to this.
-startButton.addEventListener("click", (init) => {
-  startButton.textContent = `Javascript Started!`;
-  function init() {
-    let createTreePromise = createTree();
-    let createParentPromise = createParent();
-    let appendChildrenPromise = appendChildren();
-    let eraseTreePromise = eraseTree();
-    createTreePromise.then(successCallback, failureCallback);
-    appendChildrenPromise.then(successCallback, failureCallback);
-    eraseTreePromise.then(successCallback, failureCallback);
-  }
-});
+startButton.addEventListener("click", init);
+startButton.textContent = `Javascript Started!`;
+function init() {
+  let createTreePromise = createTree();
+  let createParentPromise = createParent();
+  let appendChildrenPromise = appendChildren();
+  let eraseTreePromise = eraseTree();
+  createTreePromise.then(successCallback, failureCallback);
+  createParentPromise.then(successCallback, failureCallback);
+  appendChildrenPromise.then(successCallback, failureCallback);
+  eraseTreePromise.then(successCallback, failureCallback);
+}
 
 // Create success Callback
 function successCallback(result) {

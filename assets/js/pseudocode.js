@@ -25,13 +25,14 @@
 // For the query selectors, we'll create one
 // for the div that holds the first tree and
 // one for the button to run this script
-const firstTree = document.getElementById("treeContainer1");
-const startButton = document.getElementById("startButton");
-let container = document.createElement("div");
-let p = document.createElement("p");
-let a = document.createElement("a");
-let li = document.createElement("li");
-let ul = document.createElement("ul");
+const firstTree = document.querySelector("#treeContainer1");
+const startButton = document.querySelector("#startButton");
+const createDiv = document.createElement("div");
+const createSpan = document.createElement("span");
+const createUl = document.createElement("ul");
+const createLi = document.createElement("li");
+const createA = document.createElement("a");
+const createP = document.createElement("p");
 // Now, we can use any javascript method
 // on these elements by using their variable
 
@@ -53,10 +54,10 @@ let ul = document.createElement("ul");
 // using the getElementById() variables we already created.
 
 function createTree() {
-  // MDN LINK
-  //   Step 1- use the after() method to create
-  // the div that will hold our tree. Set it to a variable.
-  var treeContainer2 = firstTree.after(container);
+  //   Step 1- Assign a variable treeContainer2 to the
+  // createElement() div variable that I created for you above.
+  var treeContainer2 = createDiv;
+  console.log(`Container div now looks like this: ` + treeContainer2);
   // By assigning this div to a variable, we can target
   // it later anywhere in our function.
 
@@ -64,13 +65,22 @@ function createTree() {
   // using one of the following two Javascript methods:
   // The classname() Javascript Method
   // https://developer.mozilla.org/en-US/docs/Web/API/Element/className
-  treeContainer2.className = "tree treeContainer2";
+  treeContainer2.classList.add(
+    "tree",
+    "treeContainer2",
+    "cards",
+    "flexbox",
+    "width90"
+  );
+  treeContainer2.textContent = "Div created!";
+  console.log(`Container div now looks like this: ` + treeContainer2);
+
   // The setAttribute() Javascript Method
   // https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute
   // Remember- You need to getAttribute() before you can setAttribute()
-  treeContainer2.setClass
-    .getAttribute("class")
-    .setAttribute("class", "cards flexbox width90");
+  // treeContainer2.setClass
+  //   .getAttribute("class")
+  //   .setAttribute("class", "cards flexbox width90");
 }
 // I have already created  classes in style.css for this activity
 //   Apply these classes: tree treeContainer2 cards flexbox width90
@@ -81,10 +91,9 @@ function createTree() {
 //   for this click event at the bottom for functionality!
 
 function createParent() {
-  var treeContainer2 = getElementsByClassName(
-    "tree treeContainer2 cards flexbox width90"
-  );
-  let parentNode = treeContainer2.createElement("ul");
+  var treeContainer2ForParent = querySelector(".treeContainer2");
+  console.log(`Container div now looks like this: ` + treeContainer2ForParent);
+  let parentNode = treeContainer2ForParent.createElement("ul");
   parentNode.className = "parentRow width90";
   console.log(`The current node looks like this:` + parentNode);
 }
@@ -96,64 +105,69 @@ function createParent() {
 // https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 // Now we will use appenChild() to create the children node
 
-function appendChildren() {
-  // Set the treeContainer2 to a variable for this function
-  const parentNode = treeContainer2;
-  // Create an array of children for how many you would
-  // like to create. We will add more later. We'll say 2.
-  var children = ["child1", "child2"];
-  //   Now, using a For Loop, let's look through the array to
-  // create the children nodes.
-  for (var i = 0; i < text.length; i += 1) {
-    var li = parentNode.createElement("li");
-    var child = li.appendChild(document.createElement("a"));
-    var p1 = child.appendChild(document.createElement("p"));
-    var p2 = p1.insertAdjacentElement(document.createElement("p"));
-    div.className = "finalBlock";
-    div.innerHTML = text[i];
-    document.body.appendChild(li);
-  }
-  // Now, if you inspect the html
-  // You will see the items appended when
-  // you hit the Start Javascript button!
+// function appendChildren() {
+//   // Set the treeContainer2 to a variable for this function
+//   const parentNode = treeContainer2;
+//   // Create an array of children for how many you would
+//   // like to create. We will add more later. We'll say 2.
+//   var children = ["child1", "child2"];
+//   //   Now, using a For Loop, let's look through the array to
+//   // create the children nodes.
+//   for (var i = 0; i < text.length; i += 1) {
+//     var li = parentNode.createElement("li");
+//     var child = li.appendChild(document.createElement("a"));
+//     var p1 = child.appendChild(document.createElement("p"));
+//     var p2 = p1.insertAdjacentElement(document.createElement("p"));
+//     div.className = "finalBlock";
+//     div.innerHTML = text[i];
+//     document.body.appendChild(li);
+//   }
+// Now, if you inspect the html
+// You will see the items appended when
+// you hit the Start Javascript button!
 
-  // setAttribute Method \\
-  // Reminder! Arrays start at 0! \\
-}
+// setAttribute Method \\
+// Reminder! Arrays start at 0! \\
+// }
 
 // Let's also create a function that erases the tree
 // after a certain amount of time has passed. Since
 // the second function runs after the first function,
 // let's make that timeout after a longer period of time
-function eraseTree() {
-  setTimeout(createTree, 30000);
-  setTimeout(appendChildren, 60000);
-}
+// function eraseTree() {
+//   setTimeout(createTree, 30000);
+//   setTimeout(appendChildren, 60000);
+// }
 
 // Next, add any event listeners needed for your script
 // This is an event listener that will start the functions
 // on button click. We'll add any functions we build to this.
-startButton.addEventListener("click", init);
-startButton.textContent = `Javascript Started!`;
-function init() {
-  let createTreePromise = createTree();
-  let createParentPromise = createParent();
-  let appendChildrenPromise = appendChildren();
-  let eraseTreePromise = eraseTree();
-  createTreePromise.then(successCallback, failureCallback);
-  createParentPromise.then(successCallback, failureCallback);
-  appendChildrenPromise.then(successCallback, failureCallback);
-  eraseTreePromise.then(successCallback, failureCallback);
-}
+startButton.addEventListener("click", () => {
+  createTree();
+  createParent();
+  console.log("Javascript button clicked!");
+});
+// startButton.textContent = `Javascript Started!`;
+// function init() {
+//   createTree();
+// let createTreePromise = createTree();
+// let createParentPromise = createParent();
+// let appendChildrenPromise = appendChildren();
+// let eraseTreePromise = eraseTree();
+// createTreePromise.then(successCallback, failureCallback);
+// createParentPromise.then(successCallback, failureCallback);
+// appendChildrenPromise.then(successCallback, failureCallback);
+// eraseTreePromise.then(successCallback, failureCallback);
+// }
 
-// Create success Callback
-function successCallback(result) {
-  console.log(`Function finished!`);
-}
-// Create failure Callback
-function failureCallback(error) {
-  console.error(`Function failed: ${error}`);
-}
+// // Create success Callback
+// function successCallback(result) {
+//   console.log(`Function finished!`);
+// }
+// // Create failure Callback
+// function failureCallback(error) {
+//   console.error(`Function failed: ${error}`);
+// }
 
 // Coding Interview Practice! \\
 // How do we check if a string is a Palindrome?

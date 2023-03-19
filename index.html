@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <!--Import Materialize stylesheets-->
     <!-- Material Icons -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- Minimized Materialize for production -->
     <link
       type="text/css"
@@ -27,8 +24,6 @@
       href="./assets/css/materialize.css"
       media="screen,projection"
     />
-    <!-- Import Animista stylesheet -->
-    <link rel="stylesheet" href="./assets/css/animista.css" />
     <!-- Import personal stylesheets -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Import color stylesheet -->
@@ -36,13 +31,13 @@
     <title>Dom Manipulation Tree</title>
   </head>
   <!-- Start of Body -->
-  <body>
+  <body class="width100">
     <!-- Start of Main -->
-    <main>
+    <main class="width100">
       <!-- Start of Header/Nav -->
-      <div class="navbar-fixed">
+      
         <!-- Navbar Color -->
-        <nav id="nav" class="light-green-bg">
+        <nav id="nav" class="light-green-bg width100">
           <!-- Navbar Spacing -->
           <div class="nav-wrapper flexbox flexSpaceAround">
             <!-- Logo -->
@@ -56,30 +51,29 @@
             <span class="card-title left">DOM Study</span>
           </div>
         </nav>
-      </div>
       <!-- End of Header/Nav -->
       <!-- Start of Tree -->
-      <div class="cards flexbox">
-        <div class="tree treeContainer width90">
-          <ul>
+        <div id="treeContainer1" class="tree treeContainer1 cards flexbox width90">
+          <!-- Overall unorganized list -->
+          <ul class="parentRow width90">
             <li>
               <!-- Start of Parent Card -->
-              <a href="#" class="flexbox flexColumn card-content parentNode">
+              <a href="#" class="flexbox flexColumn card-content parentNode flexWrap" >
                 Parent
-                <p>I am a Parent node!</p></a
-              >
+                <p>I am a Parent node!</p></a>
               <!-- End of Parent Card -->
               <div >
               <ul class="childrenRow">
                 <li>
-                  <!-- Start of Child card -->
-                  <a href="#" class="flexbox flexColumn card-content"
+                  <!-- Start of Child 1 card -->
+                  <a href="#" class="flexbox flexColumn card-content flexWrap"
                     >Child
                     <p>I am a Child node!</p>
                   </a>
-                  <!-- End of Child card -->
+                  <!-- End of Child 1 card -->
+                                    <!-- Start of Child 2 card -->
                     <li>
-                      <a href="#" class="flexbox flexColumn card-content">
+                      <a href="#" class="flexbox flexColumn card-content flexWrap">
                         Child
                         <p>I'm a child node!</p>
                         <p>
@@ -87,23 +81,30 @@
                         </p></a
                       >
                     </li>
+                    <!-- End of Child 2 card -->
+                    <!-- Start of Child 3 card -->
                     <li>
-                      <a href="#" class="flexbox flexColumn card-content"
+                      <a href="#" class="flexbox flexColumn card-content flexWrap"
                         >
                         <p>I'm a child node!</p>
                         <p>My sibling node shares the same
                         parent node as me!</p></a
                       >
                     </li>
+                      <!-- End of Child 3 card -->
                 </li>
               </ul>
             </div>
             </li>
           </ul>
+        </div>          
+        <div class="buttonContainer">
+          <a id="startButton"
+          class="waves-effect waves-light btn blink-2 btn-custom light-orange-bg right"><span>Start Javascript</span>
+          <i class="material-symbols-outlined left">line_start</i></a>
         </div>
-      </div>
       <!-- beginning of footer -->
-      <footer class="page-footer light-green-bg">
+      <footer class="width100 page-footer light-green-bg">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
@@ -168,11 +169,13 @@
       <!-- javascript files go here -->
       <script src="./assets/js/script.js"></script>
       <!-- materialize js for optimized loading-->
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script src="./assets/js/init.js"></script>
       <script src="./assets/js/materialize.js"></script>
       <script src="./assets/js/materialize.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="assets/js/pseudocode.js"></script>
+
       <!-- End of Main -->
     </main>
     <!-- End of Body -->
